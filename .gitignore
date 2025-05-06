@@ -1,0 +1,16 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# OS metadata
+.DS_Store
+
+# Environment files (if you use them)
+.env
+
+# Patch/test artifacts
+*.patch
+*.log
