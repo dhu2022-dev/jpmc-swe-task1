@@ -108,3 +108,7 @@ In addition to completing the original task, I:
 
 - This task was originally part of the [JPMC Software Engineering Virtual Experience](https://www.theforage.com/simulations/jpmorgan/software-engineering-btjx), which has since been archived and replaced by a newer version.
 - The starter repo and original logic were provided by JPMC. Enhancements, cleanup, and the HTML-based UI are my own additions.
+
+## 💭 Reflection
+
+This task introduced me to working with real-time data feeds, basic trading logic, and server-client interactions. It gave me hands-on experience debugging a Python-based system and understanding how financial data flows from backend services to end-user tools. Revisiting the project later allowed me to apply cleaner development practices and improve its usability with a lightweight web interface.
