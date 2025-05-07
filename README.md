@@ -1,6 +1,14 @@
 # JPMC Software Engineering Virtual Experience – Task 1
 
-This project was part of JPMorgan Chase's Software Engineering Job Simulation on Forage. It simulates a basic trading system by generating mock market data and serving bid/ask quotes for two fictional stocks. I completed this as a beginner and have since cleaned and documented the repo to reflect my current standards.
+This project was part of JPMorgan Chase's Software Engineering Job Simulation on Forage. The task simulates a basic trading system by generating mock market data and serving bid/ask quotes for two fictional stocks.
+
+The original goal of this task was to:
+
+- Set up a development environment.
+- Interface with a live data feed simulator.
+- Understand how traders can use data to identify under/over-valued stocks.
+
+I completed this project early in my learning journey and have since revisited the code to clean it up, modernize the structure, and improve usability.
 
 ---
 
@@ -10,12 +18,21 @@ This task involves:
 
 - Running a Python-based HTTP server that simulates order book activity for two stocks (`ABC` and `DEF`).
 - Fetching the top bid/ask prices and calculating mid-price ratios in a client script.
-- Displaying the data visually through a lightweight HTML viewer.
-- Demonstrating understanding of APIs, basic trading logic, and data presentation.
+- (Optional extension) Displaying the data visually through a lightweight HTML viewer.
 
-The server generates synthetic market data, exposes an endpoint (`/query`) that returns the current top of the order book for both stocks, and the client script calculates and prints ratios between the mid-prices of each stock.
+The original implementation prints results in the terminal via a Python script. I added a simple web-based interface (HTML/CSS/JS) to make the output easier to view and more accessible for non-technical reviewers.
 
-I've also refactored the server code to render a basic web interface I made (with vanilla HTML,CSS,JS) that also displays this data in a user-friendly format. The original version outputs results in a terminal via a python script, instructions to see that result are also explained below.
+---
+
+## 🧠 My Contributions
+
+In addition to completing the original task, I:
+
+- Cleaned and refactored starter code for clarity and maintainability.
+- Added a `.gitignore` and ensured the repo excludes unnecessary cache/venv files.
+- Created a virtual environment and requirements file for reproducibility.
+- Built a basic UI using vanilla HTML, CSS, and JS that fetches and displays real-time market data from the server.
+- Updated the server to serve the frontend and support both the original `/query` endpoint and the new `/` UI.
 
 ---
 
@@ -84,11 +101,11 @@ I've also refactored the server code to render a basic web interface I made (wit
 
 ## 📌 Notes
 
-- JPMC has since archived this version of the job simulation and launched a newer one on Forage.
-- This version reflects the original task as completed, with cleanup and improvements to enhance accessibility and readability for reviewers.
+- This task was originally part of the [JPMC Software Engineering Virtual Experience](https://www.theforage.com/simulations/jpmorgan/software-engineering-btjx), which has since been archived and replaced by a newer version.
+- The starter repo and original logic were provided by JPMC. Enhancements, cleanup, and the HTML-based UI are my own additions.
 
 ---
 
 ## 💭 Motivation
 
-As someone interested in the intersection of finance and technology, I completed this project early in my learning journey to explore how software engineering supports financial systems. While simple, it sparked my interest in fintech and laid foundational skills I’ve since continued to develop. The added HTML view was built to help showcase the result more clearly for recruiters and technical reviewers.
+As someone interested in the intersection of finance and technology, I completed this project to explore how software engineering supports financial systems. While simple, it sparked my interest in fintech and laid foundational skills I’ve continued to build on. The added HTML view was built to help showcase the result more clearly for recruiters and technical reviewers.
