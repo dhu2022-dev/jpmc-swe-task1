@@ -103,9 +103,3 @@ In addition to completing the original task, I:
 
 - This task was originally part of the [JPMC Software Engineering Virtual Experience](https://www.theforage.com/simulations/jpmorgan/software-engineering-btjx), which has since been archived and replaced by a newer version.
 - The starter repo and original logic were provided by JPMC. Enhancements, cleanup, and the HTML-based UI are my own additions.
-
----
-
-## 💭 Motivation
-
-As someone interested in the intersection of finance and technology, I completed this project to explore how software engineering supports financial systems. While simple, it sparked my interest in fintech and laid foundational skills I’ve continued to build on. The added HTML view was built to help showcase the result more clearly for recruiters and technical reviewers.
