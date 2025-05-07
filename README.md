@@ -75,10 +75,10 @@ I've also refactored the server code to render a basic web interface I made (wit
 ## 🖼️ Visual Screenshots
 
 - 📷 **Web UI example:**  
-  _Insert screenshot of HTML-rendered market data here._
+  ![Web UI displaying ABC and DEF stock data](ui_output.png)
 
 - 🖥️ **Terminal output from `client3.py`:**  
-  _Insert sample output screenshot here._
+  ![Terminal output from client3.py](python_output.png)
 
 ---
 
