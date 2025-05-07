@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JPMC SWE Task 1 - Market Data Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .stock-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1em 2em;
+      margin-bottom: 1em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>📈 Market Data Viewer</h1>
+  <button onclick="fetchData()">Fetch Next Quote</button>
+  <div id="data-container"></div>
+
+  <script>
+    async function fetchData() {
+      const res = await fetch('/query');
+      const data = await res.json();
+  
+      const container = document.getElementById('data-container');
+      container.innerHTML = '';
+  
+      const prices = {};
+  
+      data.forEach(stock => {
+        const bid = stock.top_bid.price;
+        const ask = stock.top_ask.price;
+        const mid = (bid + ask) / 2;
+        prices[stock.stock] = mid;
+  
+        const card = document.createElement('div');
+        card.className = 'stock-card';
+        card.innerHTML = `
+          <h2>${stock.stock}</h2>
+          <p><span class="label">Timestamp:</span> ${stock.timestamp}</p>
+          <p><span class="label">Top Bid:</span> $${bid.toFixed(2)} (${stock.top_bid.size})</p>
+          <p><span class="label">Top Ask:</span> $${ask.toFixed(2)} (${stock.top_ask.size})</p>
+          <p><span class="label">Mid Price:</span> $${mid.toFixed(2)}</p>
+        `;
+        container.appendChild(card);
+      });
+  
+      // Show ratio of ABC to DEF mid prices
+      if ('ABC' in prices && 'DEF' in prices && prices['DEF'] !== 0) {
+        const ratio = (prices['ABC'] / prices['DEF']).toFixed(4);
+        const ratioDiv = document.createElement('div');
+        ratioDiv.className = 'stock-card';
+        ratioDiv.innerHTML = `
+          <h2>📊 Mid-Price Ratio</h2>
+          <p>ABC / DEF: <strong>${ratio}</strong></p>
+        `;
+        container.appendChild(ratioDiv);
+      }
+    }
+  </script>  
+</body>
+</html>

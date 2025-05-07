@@ -215,10 +215,10 @@ def get(req_handler, routes):
                 req_handler.wfile.write(bytes(data, encoding='utf-8'))
                 return
 
-
+# My Run method
 def run(routes, host='0.0.0.0', port=8080):
     """ Runs a class as a server whose methods have been decorated with
-        @route.
+        @route, and serves index.html for basic UI.
     """
 
     class RequestHandler(http.server.BaseHTTPRequestHandler):
@@ -226,6 +226,18 @@ def run(routes, host='0.0.0.0', port=8080):
             pass
 
         def do_GET(self):
+            if self.path == '/' or self.path == '/index.html':
+                try:
+                    with open("index.html", "rb") as f:
+                        self.send_response(200)
+                        self.send_header("Content-Type", "text/html")
+                        self.end_headers()
+                        self.wfile.write(f.read())
+                except FileNotFoundError:
+                    self.send_response(404)
+                    self.end_headers()
+                    self.wfile.write(b"index.html not found.")
+                return
             get(self, routes)
 
     server = ThreadedHTTPServer((host, port), RequestHandler)
@@ -239,6 +251,31 @@ def run(routes, host='0.0.0.0', port=8080):
     server.shutdown()
     server.start()
     server.waitForThread()
+
+# OLD Run method
+# def run(routes, host='0.0.0.0', port=8080):
+#     """ Runs a class as a server whose methods have been decorated with
+#         @route.
+#     """
+
+#     class RequestHandler(http.server.BaseHTTPRequestHandler):
+#         def log_message(self, *args, **kwargs):
+#             pass
+
+#         def do_GET(self):
+#             get(self, routes)
+
+#     server = ThreadedHTTPServer((host, port), RequestHandler)
+#     thread = threading.Thread(target=server.serve_forever)
+#     thread.daemon = True
+#     thread.start()
+#     print('HTTP server started on port 8080')
+#     while True:
+#         from time import sleep
+#         sleep(1)
+#     server.shutdown()
+#     server.start()
+#     server.waitForThread()
 
 
 ################################################################################
