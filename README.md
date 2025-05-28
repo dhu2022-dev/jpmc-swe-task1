@@ -2,14 +2,6 @@
 
 This project was part of JPMorgan Chase's Software Engineering Job Simulation on Forage. The task simulates a basic trading system by generating mock market data and serving bid/ask quotes for two fictional stocks.
 
-The original goal of this task was to:
-
-- Set up a development environment.
-- Interface with a live data feed simulator.
-- Understand how traders can use data to identify under/over-valued stocks.
-
-I completed this project early in my learning journey and have since revisited the code to clean it up, modernize the structure, and improve usability.
-
 ---
 
 ## 💡 Project Overview
