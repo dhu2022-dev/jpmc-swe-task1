@@ -19,8 +19,6 @@ This task involves:
 - Running a Python-based HTTP server that simulates order book activity for two stocks (`ABC` and `DEF`).
 - Fetching the top bid/ask prices and calculating mid-price ratios in a client script.
 
-The original implementation prints results in the terminal via a Python script. I added a simple web-based interface (HTML/CSS/JS) to make the output easier to view and more accessible for non-technical reviewers.
-
 ---
 
 ## 🧠 My Contributions
@@ -28,7 +26,7 @@ The original implementation prints results in the terminal via a Python script. 
 In addition to completing the original task, I:
 
 - Cleaned and refactored starter code for clarity and maintainability.
-- Built a basic UI using vanilla HTML, CSS, and JS that fetches and displays real-time market data from the server.
+- Built a basic UI using vanilla HTML, CSS, and JS that fetches and displays real-time market data from the server. (The original implementation prints results in the terminal via a Python script. I created this simple web-based interface (HTML/CSS/JS) to make the output easier to view and more accessible for non-technical reviewers.)
 - Updated the server to serve the frontend and support both the original `/query` endpoint and the new `/` UI.
 
 ---
@@ -103,11 +101,6 @@ In addition to completing the original task, I:
   ![Terminal output from client3.py](python_output.png)
 
 ---
-
-## 📌 Notes
-
-- This task was originally part of the [JPMC Software Engineering Virtual Experience](https://www.theforage.com/simulations/jpmorgan/software-engineering-btjx), which has since been archived and replaced by a newer version.
-- The starter repo and original logic were provided by JPMC. Enhancements, cleanup, and the HTML-based UI are my own additions.
 
 ## 💭 Reflection
 
