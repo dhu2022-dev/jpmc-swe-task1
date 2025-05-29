@@ -8,6 +8,7 @@ This project was part of JPMorgan Chase's Software Engineering Job Simulation on
 
 This task involves:
 
+- Fixing the broken client datafeed script in the repository.
 - Running a Python-based HTTP server that simulates order book activity for two stocks (`ABC` and `DEF`).
 - Fetching the top bid/ask prices and calculating mid-price ratios in a client script.
 
