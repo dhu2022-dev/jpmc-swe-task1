@@ -1,100 +1,58 @@
-# JPMC Software Engineering Virtual Experience – Task 1
+# Task 1: Stock price feed
 
-This project was part of JPMorgan Chase's Software Engineering Job Simulation on Forage. The task simulates a basic trading system by generating mock market data and serving bid/ask quotes for two fictional stocks.
+[← Software Engineering (Perspective)](https://github.com/dhu2022-dev/job-simulations/blob/main/jpmc/swe-perspective/README.md)
 
----
+[Task 2 →](https://github.com/dhu2022-dev/jpmc-swe-task2)
 
-## 💡 Project Overview
+Task 1 from the JPMC Software Engineering (Perspective) job sim. Python server that serves mock bid/ask quotes for two stocks; fixed client computes mid-prices and their ratio. I also added a small web UI served from the same server.
 
-This task involves:
+## How to run
 
-- Fixing the broken client datafeed script in the repository.
-- Running a Python-based HTTP server that simulates order book activity for two stocks (`ABC` and `DEF`).
-- Fetching the top bid/ask prices and calculating mid-price ratios in a client script.
-
----
-
-## 🧠 My Contributions
-
-In addition to completing the original task, I:
-
-- Cleaned and refactored starter code for clarity and maintainability.
-- Built a basic UI using vanilla HTML, CSS, and JS that fetches and displays real-time market data from the server. (The original implementation prints results in the terminal via a Python script. I created this simple web-based interface (HTML/CSS/JS) to make the output easier to view and more accessible for non-technical reviewers.)
-- Updated the server to serve the frontend and support both the original `/query` endpoint and the new `/` UI.
-
----
-
-## 🛠️ Technologies Used
-
-- 🐍 Python 3 (data feed server)
-- 💡 HTML, CSS, JS
-- 🧪 Python unit testing
-
----
-
-## 🚀 How to Run
-
-1. **Clone the repository**
+1. Clone and enter the repo:
 
    ```bash
-   git clone https://github.com/your-username/jpmc-swe-task.git
-   cd jpmc-swe-task
+   git clone https://github.com/dhu2022-dev/jpmc-swe-task1.git
+   cd jpmc-swe-task1
    ```
 
-2. **Set up a virtual environment**
+2. Set up a virtual environment:
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On macOS/Linux
-   # OR
-   venv\Scripts\activate     # On Windows
+   source venv/bin/activate  # macOS/Linux
+   # OR: venv\Scripts\activate  # Windows
    ```
 
-3. **Install dependencies**
+3. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the server**
+4. Start the server:
 
    ```bash
    python3 server3.py
    ```
 
-5. **Open the UI in your browser**
-
-   Navigate to:
-   ```
-   http://localhost:8080/
-   ```
-
-   Click the **“Fetch next quote”** button to retrieve and display the latest prices for both stocks.
-
-6. **(Optional) Run the original Python client**
+5. Open `http://localhost:8080/` and click **Fetch next quote**, or run the original client:
 
    ```bash
    python3 client3.py
    ```
 
-7. **(Optional) Run unit tests**
+6. (Optional) Run unit tests:
 
    ```bash
    python3 client_test.py
    ```
 
----
+## Screenshots
 
-## 🖼️ Visual Screenshots
+Web UI:
 
-- 📷 **Web UI example:**  
-  ![Web UI displaying ABC and DEF stock data](ui_output.png)
+![Web UI displaying ABC and DEF stock data](ui_output.png)
 
-- 🖥️ **Terminal output from `client3.py`:**  
-  ![Terminal output from client3.py](python_output.png)
+Terminal output from `client3.py`:
 
----
-
-## 💭 Reflection
-
-This task introduced me to working with real-time data feeds, basic trading logic, and server-client interactions. It gave me hands-on experience debugging a Python-based system and understanding how financial data flows from backend services to end-user tools. Revisiting the project later allowed me to apply cleaner development practices and improve its usability with a lightweight web interface.
+![Terminal output from client3.py](python_output.png)
